@@ -1,0 +1,8 @@
+{ 
+    "CREATE_TABLE" : [ 
+        "create table  if not exists web_site ( id integer PRIMARY KEY, name VARCHAR, data_inclusao DATETIME); "
+        ,
+        "CREATE TABLE IF NOT EXISTS web_page(   id integer PRIMARY KEY, id_web_site INTEGER, address VARCHAR, raw_content TEXT, article_summary TEXT, article_content TEXT,  FOREIGN KEY (id) REFERENCES web_site (id) );"
+
+    ] 
+}
