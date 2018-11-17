@@ -69,3 +69,18 @@ def inserir_webpage(conn, page):
     cur = conn.cursor()
     cur.execute(sql, page)
     return cur.lastrowid
+
+    
+def seleciona_site(conn, site):
+    """
+    Selecionar um site da tabela web_site
+    :param conn: the Connection object
+    :param site(name[string]):
+    :return:
+    """
+    cur = conn.cursor()
+    cur.execute("SELECT * FROM web_site WHERE name=?", (site,))
+ 
+    rows = cur.fetchall()
+ 
+    return rows
